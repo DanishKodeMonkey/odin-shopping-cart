@@ -4,15 +4,39 @@
 
 ### pages
 
--   Home page
-    -   Includes cart component
--   Shopping page
+-   Home page - Includes cart component
 
-    -   includes cart component
+    -   images, information, welcome?
+
+-   Shopping page - includes cart component
+    -   shop items
+        -   cards with:
+            -   item title
+            -   item description
+            -   item number input
+            -   item number increment
 
 Navigate pages using nav bar component
 
 ### components
 
--   nav bar component
--   Cart component
+-   fetch component
+    -   use https://fakestoreapi.com/ for pseudo product calls
+-   header component
+    -   nav bar component
+    -   Cart component
+        -   two forms
+            -   small(unfocused)
+                -   cart icon
+                -   number of items in cart
+            -   full (focused)
+                -   items scroll menu with all included items
+                -   each item has their amount value set
+                -   each value can be incremented, decremented.
+            -   toggled by clicking cart icon
+-   main component
+    -   determined by nav-bar
+        -   home page
+        -   shopping page
+-   footer component
+    -   credits
