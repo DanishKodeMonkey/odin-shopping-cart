@@ -8,15 +8,18 @@
 
 header{
   text-align: center;
-  position: relative;
+  position: sticky;
+  top:0;
   width: 100%;
   border-bottom: 2px solid #444444;
 }
 
 main{
+
   padding-left: 10vw;
   padding-right: 10vw;
   overflow-y: scroll;
+  text-align: center;
 }
 
 footer{

@@ -1,0 +1,74 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(66, 66, 66);
+    color: rgb(216, 216, 216);
+    border: 3px solid rgb(155, 155, 155);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.card-image{
+    border: 2px solid #303030;
+    border-radius: 10%;
+    justify-self: start;
+    width: clamp(20px, 50%, 200px);
+    aspect-ratio: 1 / 1;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow:1;
+}
+.card-title{
+    font-size: clamp(10px, 2vw, 30px);
+}
+
+.card-price{
+    font-size: clamp(15px, 3vw, 50px);
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.card-rating{
+    font-size: clamp(5px, 1vw, 15px)
+}
+
+.add-to-cart-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quantity{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+
+    >input{
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 2vw;
+        text-align: center;
+        width: 100%;
+        appearance: textfield;
+    }
+}
+.quantity-buttons{
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(5px, 2vw, 15px);
+    >button{
+        border-radius: 10px;
+        width: 1.5vw;
+        padding: 0;
+    }
+}
+.add-button{
+    font-size: clamp(10px, 1.5vw, 30px);
+}
