@@ -1,9 +1,43 @@
 import { useState } from 'react';
+import { useCart } from '../CartContext';
 
 import './Card.css';
 
-const Card = ({ id, title, price, description, category, image, rating }) => {
+const Card = ({
+    id,
+    title,
+    price,
+    description,
+    category,
+    image,
+    rating,
+    setCartItems,
+}) => {
+    const { cartItems, setCartItems: updateCartItems } = useCart();
     const [quantity, setQuantity] = useState(0);
+
+    const handleAddToCart = () => {
+        // check if valid quantity
+        if (quantity < 0) {
+            alert('Quantity should be equal to, or greater than 0');
+            return;
+        }
+
+        const existingItem = cartItems.findIndex(item => item.id === id);
+
+        if (existingItem !== -1) {
+            // if item exist, update the quantity
+            const updatedItems = [...cartItems];
+            updatedItems[existingItem].quantity += quantity;
+            updateCartItems(updatedItems);
+        } else {
+            // if item does not exist, add it
+            updateCartItems(prevItems => [
+                ...prevItems,
+                { id, title, price, rating, quantity },
+            ]);
+        }
+    };
 
     const handleIncrement = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
@@ -13,9 +47,6 @@ const Card = ({ id, title, price, description, category, image, rating }) => {
         setQuantity(prevQuantity => prevQuantity - 1);
     };
 
-    const handleAddToCart = () => {
-        console.log(`Added ${quantity} of ${title} to cart`);
-    };
     return (
         <div className='card'>
             <img

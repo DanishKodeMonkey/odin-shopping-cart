@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useCart } from '../CartContext';
 import Card from '../components/Card';
 import './Shop.css';
 
@@ -23,6 +24,7 @@ const FetchStore = () => {
 };
 
 const Shop = () => {
+    const { cartItems, setCartItems } = useCart();
     const { storeCollection, error, loading } = FetchStore();
 
     if (error) return <p>A network error was encountered.</p>;
@@ -35,13 +37,8 @@ const Shop = () => {
                 {storeCollection.map(item => (
                     <Card
                         key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        price={item.price}
-                        description={item.description}
-                        category={item.category}
-                        image={item.image}
-                        rating={item.rating}
+                        {...item}
+                        setCartItems={setCartItems}
                     />
                 ))}
             </div>
