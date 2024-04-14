@@ -40,3 +40,7 @@ Navigate pages using nav bar component
         -   shopping page
 -   footer component
     -   credits
+
+### tests
+
+-   don't test NavBar, it only uses acclaimed external modules to work. Assume it works as intended.

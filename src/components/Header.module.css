@@ -1,0 +1,23 @@
+
+ul{
+    display: flex;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+li{
+    list-style-type: none;
+}
+.btn{
+    width: 25vw;
+}
+.headerH1{
+    margin-top:0;
+}
+.headerContainer{
+    background-color: #313131;
+    padding: 5px;
+}
