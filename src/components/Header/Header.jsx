@@ -8,7 +8,7 @@ const Header = () => {
             <h1 className={styles.headerH1}>CoffeeLovers shop!</h1>
             <div className={styles.HeaderBar}>
                 <NavBar />
-                <CartMenu className={styles.cartMenu} />
+                <CartMenu />
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useCart } from '../../CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -7,6 +8,7 @@ import './CartMenu.css';
 const CartMenu = () => {
     // destructure custom state hook to use data
     const { cartItems } = useCart();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // calculate the total quantity of items in the cart
     const totalItems = cartItems.reduce(
@@ -14,13 +16,48 @@ const CartMenu = () => {
         0
     );
 
+    const totalPrice = cartItems.reduce(
+        (total, item) => total + item.quantity * item.price,
+        0
+    );
+
+    const handleMenuToggle = () => {
+        // Boolean reversal for toggle of state
+        setIsMenuOpen(prevIsMenuOpen => !prevIsMenuOpen);
+    };
+
+    // Helper function to filter out non-alphanumeric characters
+    const cleanTitle = title => {
+        return title.replace(/[^a-zA-Z0-9\s]/g, '');
+    };
     return (
-        <div>
-            <IconContext.Provider value={{ className: 'cart-icon' }}>
-                <FaShoppingCart />
-            </IconContext.Provider>
-            &nbsp;
-            <span className='total-items-text'>{totalItems}</span>
+        <div className='cart-menu'>
+            <div
+                className='cart-icon-container'
+                onClick={handleMenuToggle}
+            >
+                <IconContext.Provider value={{ className: 'cart-icon' }}>
+                    <FaShoppingCart />
+                </IconContext.Provider>
+                &nbsp;
+                <span className='total-items-text'>{totalItems}</span>
+            </div>
+            {isMenuOpen && (
+                <div className={'cart-menu-expanded'}>
+                    <ul className='cart-item'>
+                        {cartItems.map(item => (
+                            <li key={item.id}>
+                                {item.quantity} -{' '}
+                                {cleanTitle(item.title).slice(0, 10)}
+                                {item.title.length > 10 ? '...' : ''} <br />
+                                {item.price} &euro;
+                            </li>
+                        ))}
+                    </ul>
+                    <p className='cart-total'>Total: {totalPrice} &euro;</p>
+                    <button className='checkout-button'>Checkout</button>
+                </div>
+            )}
         </div>
     );
 };
