@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../../CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -55,7 +56,9 @@ const CartMenu = () => {
                         ))}
                     </ul>
                     <p className='cart-total'>Total: {totalPrice} &euro;</p>
-                    <button className='checkout-button'>Checkout</button>
+                    <Link to='/checkout'>
+                        <button className='checkout-button'>Checkout</button>
+                    </Link>
                 </div>
             )}
         </div>
