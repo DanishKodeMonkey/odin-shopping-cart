@@ -1,0 +1,3 @@
+.cart-icon, .total-items-text {
+    font-size: clamp(2px, 5vw, 20px);
+}

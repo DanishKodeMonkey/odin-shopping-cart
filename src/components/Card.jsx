@@ -18,7 +18,7 @@ const Card = ({
 
     const handleAddToCart = () => {
         // check if valid quantity
-        if (quantity < 0) {
+        if (quantity <= 0) {
             alert('Quantity should be equal to, or greater than 0');
             return;
         }
@@ -44,6 +44,7 @@ const Card = ({
     };
 
     const handleDecrement = () => {
+        if (quantity < 1) return;
         setQuantity(prevQuantity => prevQuantity - 1);
     };
 
