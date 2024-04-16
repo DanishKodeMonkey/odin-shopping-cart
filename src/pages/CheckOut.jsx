@@ -17,6 +17,12 @@ const CheckOut = () => {
     return (
         <div className='checkout-container'>
             <h2>Checkout:</h2>
+            <div className='checkout-header'>
+                <p>#</p>
+                <p>Item</p>
+                <p>Quantity</p>
+                <p>Sub-total</p>
+            </div>
             <div className='checkout-summary'>
                 {cartItems.map(item => (
                     <div
@@ -29,9 +35,9 @@ const CheckOut = () => {
                             className='card-image'
                         />
                         <h3>{item.title}</h3>
-                        <p>Quantity: {item.quantity}</p>
+                        <p>{item.quantity}</p>
                         <p>
-                            Subtotal: {(item.price * item.quantity).toFixed(2)}
+                            {(item.price * item.quantity).toFixed(2)}
                             &euro;
                         </p>
                     </div>

@@ -7,7 +7,8 @@ const Footer = () => {
             <a href='https://github.com/DanishKodeMonkey'>
                 Daniel @danishKodeMonkey
             </a>{' '}
-            Powered by <a href='https://vitejs.dev/'>React@Vite</a>
+            Powered by <a href='https://vitejs.dev/'>React@Vite</a> <br />
+            API by <a href='https://fakestoreapi.com/'>fakestoreapi.com</a>
         </div>
     );
 };

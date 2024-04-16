@@ -31,11 +31,11 @@ const CartMenu = () => {
         return title.replace(/[^a-zA-Z0-9\s]/g, '');
     };
     return (
-        <div className='cart-menu'>
-            <div
-                className='cart-icon-container'
-                onClick={handleMenuToggle}
-            >
+        <div
+            className='cart-menu'
+            onClick={handleMenuToggle}
+        >
+            <div className='cart-icon-container'>
                 <IconContext.Provider value={{ className: 'cart-icon' }}>
                     <FaShoppingCart />
                 </IconContext.Provider>
