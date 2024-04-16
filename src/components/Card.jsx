@@ -34,7 +34,7 @@ const Card = ({
             // if item does not exist, add it
             updateCartItems(prevItems => [
                 ...prevItems,
-                { id, title, price, rating, quantity },
+                { id, image, title, price, rating, quantity },
             ]);
         }
     };

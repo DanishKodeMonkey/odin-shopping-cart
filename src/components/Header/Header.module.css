@@ -12,9 +12,11 @@ li{
     list-style-type: none;
 }
 .btn{
-    width: 25vw;
+    font-size: 2vw;
+    width: 18vw;
 }
 .headerH1{
+    font-size: 4vw;
     margin-top:0;
 }
 .headerContainer{

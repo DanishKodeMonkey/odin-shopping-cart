@@ -17,10 +17,9 @@ const CartMenu = () => {
         0
     );
 
-    const totalPrice = cartItems.reduce(
-        (total, item) => total + item.quantity * item.price,
-        0
-    );
+    const totalPrice = cartItems
+        .reduce((total, item) => total + item.quantity * item.price, 0)
+        .toFixed(2);
 
     const handleMenuToggle = () => {
         // Boolean reversal for toggle of state
@@ -46,12 +45,27 @@ const CartMenu = () => {
             {isMenuOpen && (
                 <div className={'cart-menu-expanded'}>
                     <ul className='cart-item'>
+                        <div className='cart-item-header'>
+                            <p>#</p>
+                            <p>Product</p>
+                            <p>Price</p>
+                            <p>Sub-total</p>
+                        </div>
                         {cartItems.map(item => (
-                            <li key={item.id}>
-                                {item.quantity} -{' '}
-                                {cleanTitle(item.title).slice(0, 10)}
-                                {item.title.length > 10 ? '...' : ''} <br />
-                                {item.price} &euro;
+                            <li
+                                key={item.id}
+                                className='cart-item-preview'
+                            >
+                                <p>{item.quantity} x </p>
+                                <p>
+                                    {cleanTitle(item.title).slice(0, 20)}{' '}
+                                    {item.title.length > 15 ? '...' : ''}
+                                </p>
+                                <p>{item.price.toFixed(2)} &euro;</p>
+                                <p>
+                                    {(item.price * item.quantity).toFixed(2)}{' '}
+                                    &euro;
+                                </p>
                             </li>
                         ))}
                     </ul>

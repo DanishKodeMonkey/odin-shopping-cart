@@ -45,13 +45,36 @@
 .cart-item{
     display: flex;
     flex-direction: column;
-    background-color: green;
-    font-size: 2vw;
+    font-size: 1vw;
+}
+.cart-item-header{
+    display:grid;
+    grid-template-columns: 1fr 5fr 2fr 2fr;
+    border-bottom: 1px solid #cccccc70;
+
+}
+.cart-item-preview{
+    display:grid;
+    grid-template-columns: 1fr 5fr 2fr 2fr;
 }
 .cart-total{
+    font-size: 1.5vw;
     border-top: 2px solid #cccccc70;
     border-bottom: 4px double #cccccc70;
 }
 .checkout-button{
+    font-size: 2vw;
     background-color: #202929;
+}
+
+@media screen and (max-width: 500) {
+    .cart-icon-container{
+        background-color: red;
+        width: 50px;
+    }
+    .cart-icon, .total-items-text {
+        background-color: red;
+        font-size: clamp(2px, 2vw, 5px);
+    }
+    
 }
