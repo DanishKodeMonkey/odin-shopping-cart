@@ -1,4 +1,5 @@
 .footerContainer{
    font-size: clamp(8px, 1vw, 10px);
-   background-color: #313131;;
+   color: var(--text-color);
+   background-color: var(--background-color-secondary);
 }

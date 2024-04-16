@@ -7,6 +7,7 @@ import App from './App.jsx';
 import Home from './pages/Home.jsx';
 import Shop from './pages/Shop.jsx';
 import CheckOut from './pages/CheckOut.jsx';
+import './components/DarkModeToggle.css';
 import './index.css';
 
 const router = createBrowserRouter([

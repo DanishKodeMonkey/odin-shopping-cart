@@ -4,9 +4,9 @@
     justify-content: start;
     align-items: center;
     text-align: center;
-    background-color: rgb(66, 66, 66);
-    color: rgb(216, 216, 216);
-    border: 3px solid rgb(155, 155, 155);
+    background-color: var(--background-color-tertiary);
+    color: var(--text-color);
+    border: 3px solid var(--box-border-color);
     border-radius: 15px;
     padding: 10px;
 }
@@ -51,7 +51,9 @@
     width: 80%;
 
     >input{
-        border: 1px solid #ccc;
+        background-color: var(--background-color-primary);
+        color: var(--text-color);
+        border: 1px solid var(--box-border-color);
         border-radius: 10px;
         font-size: 2vw;
         text-align: center;

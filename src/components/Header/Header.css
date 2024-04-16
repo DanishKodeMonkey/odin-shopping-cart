@@ -22,7 +22,7 @@ li{
 .headerContainer{
     display: flex;
     flex-direction: column;
-    background-color: #313131;
+    background-color: var(--background-color-secondary);
     padding: 5px;
 }
 .HeaderBar{

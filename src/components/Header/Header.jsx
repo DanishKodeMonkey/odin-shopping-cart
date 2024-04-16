@@ -1,7 +1,7 @@
 import './Header.css';
 import NavBar from './NavBar';
 import CartMenu from './CartMenu';
-
+import DarkModeToggle from '../DarkModeToggle';
 const Header = () => {
     return (
         <div className='headerContainer'>
@@ -9,6 +9,7 @@ const Header = () => {
             <div className='HeaderBar'>
                 <NavBar />
                 <CartMenu />
+                <DarkModeToggle />
             </div>
         </div>
     );
