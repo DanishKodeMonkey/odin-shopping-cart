@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { CartProvider } from './CartContext';
+import { useState } from 'react';
 
 function App() {
     return (

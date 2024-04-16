@@ -11,6 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: .3s ease-in-out;
 }
 
 a {
@@ -54,14 +55,23 @@ button:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  :root  {
     color: #213547;
     background-color: #ffffff;
+  }
+  
+  header>.headerContainer, footer>.footerContainer{
+    background-color: #ff811b;
+  }
+  a{
+    color: #676eff;
   }
   a:hover {
     color: #747bff;
   }
-  button {
+  button, .cart-menu {
+    border-color: #1a1a1a;
+    border-width: 2px;
     background-color: #f9f9f9;
   }
 }
