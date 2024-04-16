@@ -31,7 +31,7 @@ const CartMenu = () => {
         return title.replace(/[^a-zA-Z0-9\s]/g, '');
     };
     return (
-        <div
+        <button
             className='cart-menu'
             onClick={handleMenuToggle}
         >
@@ -75,7 +75,7 @@ const CartMenu = () => {
                     </Link>
                 </div>
             )}
-        </div>
+        </button>
     );
 };
 

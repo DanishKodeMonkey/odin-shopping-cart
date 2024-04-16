@@ -1,3 +1,9 @@
+nav{
+    width: 40%;
+    >ul>li{
+        width: 50%;
+    }
+}
 
 ul{
     display: flex;
@@ -10,10 +16,10 @@ ul{
 
 li{
     list-style-type: none;
-}
-.btn{
-    font-size: 1.2vw;
-    width: 18vw;
+    >a>button{
+        font-size: 100%;
+        width: 100%;
+    }
 }
 .headerH1{
     font-size: 4vw;
@@ -35,8 +41,5 @@ li{
     .headerH1{
         font-size: clamp(5px, 6vw, 40px);
     }
-    .btn{
-        font-size: clamp(8px, 3vw, 20px);
-    }
-    
+   
 }
