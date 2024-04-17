@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -17,9 +17,11 @@ const CartMenu = () => {
         0
     );
 
-    const totalPrice = cartItems
-        .reduce((total, item) => total + item.quantity * item.price, 0)
-        .toFixed(2);
+    const totalPrice = useMemo(() => {
+        return cartItems
+            .reduce((total, item) => total + item.quantity * item.price, 0)
+            .toFixed(2);
+    }, [cartItems]);
 
     const handleMenuToggle = () => {
         // Boolean reversal for toggle of state
